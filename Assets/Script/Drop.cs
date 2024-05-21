@@ -6,7 +6,7 @@ public class Drop : MonoBehaviour
 {
     public GameObject projectilePrefab;
     public float projectileSpeed;
-    public GameObject Prefab;
+    public GameObject[] Prefab;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -32,8 +32,10 @@ public class Drop : MonoBehaviour
     }
 
     private void GenerateItems()
-{
-    Vector3 spawnPosition = transform.position;
-    Instantiate(Prefab, spawnPosition + (Vector3)(Random.insideUnitCircle * 2f), Quaternion.identity);
-}
+    {
+        Vector3 spawnPosition = transform.position;
+        GameObject itemPrefab = Prefab[Random.Range(0, Prefab.Length)];
+
+        Instantiate(itemPrefab, spawnPosition + (Vector3)(Random.insideUnitCircle * 2f), Quaternion.identity);
+    }
 }
