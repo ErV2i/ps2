@@ -1,6 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class WallKRight : MonoBehaviour
+public class wallKLeft : MonoBehaviour
+
 {
     private Rigidbody2D rb;
     private Quaternion initialRotation;
@@ -31,7 +34,7 @@ public class WallKRight : MonoBehaviour
             {
                 rb.gravityScale = 0;
             }
-            transform.rotation = Quaternion.Euler(0, 0, -90);
+            transform.rotation = Quaternion.Euler(0, 0, 90);
         }
     }
 
@@ -84,3 +87,4 @@ public class WallKRight : MonoBehaviour
         }
     }
 }
+
