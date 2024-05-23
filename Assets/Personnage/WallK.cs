@@ -30,8 +30,9 @@ public class WallKRight : MonoBehaviour
             if (rb != null)
             {
                 rb.gravityScale = 0;
+                rb.velocity = new Vector2(0.0f, 0.0f);
             }
-            transform.rotation = Quaternion.Euler(0, 0, -90);
+            transform.rotation = Quaternion.Euler(0, 0, 90);
         }
     }
 
@@ -74,6 +75,7 @@ public class WallKRight : MonoBehaviour
     private void StopWallJump()
     {
         isWJumping = false;
+        rb.velocity = new Vector2(0.0f, 0.0f);
     }
 
     private void Update()

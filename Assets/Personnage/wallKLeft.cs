@@ -22,25 +22,26 @@ public class wallKLeft : MonoBehaviour
         if (rb != null)
         {
             initialGravityScale = rb.gravityScale;
+            rb.velocity = new Vector2(0.0f, 0.0f);
         }
         initialRotation = transform.rotation;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Wall"))
+        if (other.gameObject.CompareTag("WallRight"))
         {
             if (rb != null)
             {
                 rb.gravityScale = 0;
             }
-            transform.rotation = Quaternion.Euler(0, 0, 90);
+            transform.rotation = Quaternion.Euler(0, 0, -90);
         }
     }
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Wall"))
+        if (other.gameObject.CompareTag("WallRight"))
         {
             ResetToInitialState();
         }
@@ -77,6 +78,7 @@ public class wallKLeft : MonoBehaviour
     private void StopWallJump()
     {
         isWJumping = false;
+        rb.velocity = new Vector2(0.0f, 0.0f);
     }
 
     private void Update()
