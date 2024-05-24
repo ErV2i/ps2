@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WallKRight : MonoBehaviour
+public class WallK : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Quaternion initialRotation;
@@ -12,6 +12,7 @@ public class WallKRight : MonoBehaviour
     private Vector2 wallJumpingPower = new Vector2(4f, 8f);
     [SerializeField] private Transform isWall;
     [SerializeField] private LayerMask wallLayer;
+    private bool isWallRight;
 
     private void Start()
     {
@@ -34,6 +35,17 @@ public class WallKRight : MonoBehaviour
             }
             transform.rotation = Quaternion.Euler(0, 0, 90);
         }
+        if (other.gameObject.CompareTag("WallRight"))
+        {
+            if (rb != null)
+            {
+                isWallRight = true;
+                rb.gravityScale = 0;
+                rb.velocity = new Vector2(0.0f, 0.0f);
+                Debug.Log("is wall right");
+            }
+            transform.rotation = Quaternion.Euler(0, 0, -90);
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other)
@@ -41,6 +53,11 @@ public class WallKRight : MonoBehaviour
         if (other.gameObject.CompareTag("Wall"))
         {
             ResetToInitialState();
+        }
+        if (other.gameObject.CompareTag("WallRight"))
+        {
+            ResetToInitialState();
+            isWallRight = false;
         }
     }
 
@@ -62,14 +79,26 @@ public class WallKRight : MonoBehaviour
     {
         wallJumpingCounter = wallJumpingTime;
 
-        if (Input.GetButtonDown("Jump") && wallJumpingCounter > 0f)
+        if (Input.GetButtonDown("Jump") && wallJumpingCounter > 0f && isWallRight != true)
         {
             isWJumping = true;
             rb.velocity = new Vector2(-wallJumpingPower.x, wallJumpingPower.y);
             wallJumpingCounter = 0f;
 
             Invoke(nameof(StopWallJump), wallJumpingDuration);
+            Debug.Log("Jump left");
         }
+
+        if (Input.GetButtonDown("Jump") && wallJumpingCounter > 0f && isWallRight==true)
+        {
+            isWJumping = true;
+            rb.velocity = new Vector2(wallJumpingPower.x, wallJumpingPower.y);
+            wallJumpingCounter = 0f;
+
+            Invoke(nameof(StopWallJump), wallJumpingDuration);
+            Debug.Log("Jump right");
+        }
+
     }
 
     private void StopWallJump()
