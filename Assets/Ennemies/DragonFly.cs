@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class DragonFly : MonoBehaviour
 {
-    public Transform Follow; 
+    public Transform Follow;
     public float speed = 2f;
-    public float Rayon = 5f; 
+    public float Rayon = 5f;
     public float maxDistance = 10f;
+    public GameObject objectToSpawn;
+    public float spawnInterval = 8f;
+    void Start()
+    {
+        StartCoroutine(SpawnObjects());
+    }
 
     void Update()
     {
@@ -21,7 +27,6 @@ public class DragonFly : MonoBehaviour
             return;
         }
 
-  
         Vector3 targetPosition = new Vector3(Follow.position.x, Follow.position.y + Rayon, transform.position.z);
 
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
@@ -32,6 +37,17 @@ public class DragonFly : MonoBehaviour
         {
             Vector3 newPosition = new Vector3(Follow.position.x, Follow.position.y + maxDistance, transform.position.z);
             transform.position = Vector3.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
+        }
+    }
+
+    IEnumerator SpawnObjects()
+    {
+        while (true)
+        {
+
+            Instantiate(objectToSpawn, transform.position, Quaternion.identity);
+
+            yield return new WaitForSeconds(spawnInterval);
         }
     }
 }

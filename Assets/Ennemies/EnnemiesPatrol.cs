@@ -1,29 +1,30 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnnemiesPatrol : MonoBehaviour
 {
-    public float speed;
-    public Transform[] waypoint;
+    public float vitesse;
+    public Transform[] point;
 
-    private Transform target;
-    private int destPoint = 0;
+    private Transform targ;
+    private int adestPoint = 0;
 
-    void Start()
+   private void Start()
     {
-        target = waypoint[0];
+        targ = point[0];
     }
 
-    void Update()
+    private void Update()
     {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+        Vector3 dir = targ.position - transform.position;
+        transform.Translate(dir.normalized * vitesse * Time.deltaTime, Space.World);
 
-        if(Vector3.Distance(transform.position, target.position) < 0.3f)
+        if(Vector3.Distance(transform.position, targ.position) < 0.3f)
         {
-            destPoint = (destPoint + 1) % waypoint.Length;
-            target = waypoint[destPoint];
+            adestPoint = (adestPoint + 1) % point.Length;
+            targ = point[adestPoint];
 
             Flip();
         }
