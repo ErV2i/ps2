@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Wall
   - WallRight
+  - Slide
+  - SlideRight
   layers:
   - Default
   - TransparentFX
