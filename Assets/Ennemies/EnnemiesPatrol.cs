@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +10,7 @@ public class EnnemiesPatrol : MonoBehaviour
     private Transform targ;
     private int adestPoint = 0;
 
-   private void Start()
+    private void Start()
     {
         targ = point[0];
     }

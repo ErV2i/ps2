@@ -6,7 +6,6 @@ public class PlayerDetector : MonoBehaviour
 {
     public float detectionRadius = 5f;
     public Transform player;
-    public GameObject epee;
     private Vector3 initialPosition;
     private bool playerDetected = false;
 
@@ -35,24 +34,10 @@ public class PlayerDetector : MonoBehaviour
             playerDetected = true;
             Debug.Log("Joueur détecté");
 
-            GeneratePrefab();
         }
         else
         {
             playerDetected = false;
-        }
-    }
-
-    void GeneratePrefab()
-    {
-        if (epee != null)
-        {
-            Instantiate(epee, transform.position, Quaternion.identity);
-            Debug.Log("Prefab généré");
-        }
-        else
-        {
-            Debug.LogWarning("Object pas la");
         }
     }
 
