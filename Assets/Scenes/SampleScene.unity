@@ -2841,6 +2841,17 @@ MonoBehaviour:
   maxDistance: 10
   objectToSpawn: {fileID: 6474708277837656289, guid: f0d461725f780e7419f3b9efb45948bb, type: 3}
   spawnInterval: 8
+--- !u!114 &1725495855 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5896776282414004655, guid: cd769d7f490e5f74f8624d84c31bcc87, type: 3}
+  m_PrefabInstance: {fileID: 502868472491499017}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814d2e1f0341cdc48b454aac77812d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1779986279
 GameObject:
   m_ObjectHideFlags: 0
@@ -3747,6 +3758,14 @@ PrefabInstance:
     - target: {fileID: 4335347552698361760, guid: cd769d7f490e5f74f8624d84c31bcc87, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5491728967434816966, guid: cd769d7f490e5f74f8624d84c31bcc87, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1725495855}
+    - target: {fileID: 5491728967434816966, guid: cd769d7f490e5f74f8624d84c31bcc87, type: 3}
+      propertyPath: maxHealth
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6747386212690450441, guid: cd769d7f490e5f74f8624d84c31bcc87, type: 3}
       propertyPath: player
