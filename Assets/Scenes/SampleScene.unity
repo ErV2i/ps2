@@ -300,6 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dbd8dc50ab50b04783571675148d997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atkAreaObject: {fileID: 1779986279}
 --- !u!1 &445475521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,6 +1805,74 @@ Transform:
   - {fileID: 1647871929}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1008586881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1008586884}
+  - component: {fileID: 1008586883}
+  - component: {fileID: 1008586882}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1008586882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008586881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1008586883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008586881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1008586884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008586881}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1190410034
 GameObject:
   m_ObjectHideFlags: 0
@@ -2817,6 +2886,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a32042f986cc65498cede20dc8fee17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 3
+  isAttacking: 0
 --- !u!61 &1779986282
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3639,7 +3710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1399601850781540101, guid: cd769d7f490e5f74f8624d84c31bcc87, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2121601
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1399601850781540101, guid: cd769d7f490e5f74f8624d84c31bcc87, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3671,6 +3742,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1399601850781540101, guid: cd769d7f490e5f74f8624d84c31bcc87, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4335347552698361760, guid: cd769d7f490e5f74f8624d84c31bcc87, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6747386212690450441, guid: cd769d7f490e5f74f8624d84c31bcc87, type: 3}
@@ -3927,7 +4002,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4206228028892861073, guid: 2d16d605aeb388b4f85381a6f6391ac1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.83
+      value: 21.8
       objectReference: {fileID: 0}
     - target: {fileID: 4206228028892861073, guid: 2d16d605aeb388b4f85381a6f6391ac1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4605,3 +4680,4 @@ SceneRoots:
   - {fileID: 1264553794572855756}
   - {fileID: 6619974414220925712}
   - {fileID: 502868472491499017}
+  - {fileID: 1008586884}

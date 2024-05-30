@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class AtkArea : MonoBehaviour
 {
-    private int damage = 3;
+    public int damage = 3;
+    public bool isAttacking = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (GetComponent<Collider>().GetComponent<Health>() != null) ;
+        if (isAttacking)
         {
-            health.Damage(damage);
+            Health health = collision.GetComponent<Health>();
+            if (health != null)
+            {
+                health.Damage(damage);
+                Debug.Log("AtkArea, dégat à " + collision.gameObject.name);
+            }
         }
     }
 }

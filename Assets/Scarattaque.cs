@@ -46,7 +46,6 @@ public class Scarattaque : MonoBehaviour
     {
         if (playerDetected)
         {
-            Debug.Log("Player détecté");
             transform.position = initialPosition;
         }
     }

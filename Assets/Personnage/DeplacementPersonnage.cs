@@ -44,6 +44,4 @@ public class DeplacementPersonnage : MonoBehaviour
             grounded = false;
         }
     }
-
-  
 }

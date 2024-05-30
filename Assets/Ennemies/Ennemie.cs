@@ -19,8 +19,6 @@ public class Ennemie : MonoBehaviour
     {
         float distance = Vector2.Distance(transform.position, player.transform.position);
 
-        Debug.Log(distance);
-
         if (distance < disLimite)
         {
             timer += Time.deltaTime;
