@@ -9,7 +9,7 @@ public class WallK : MonoBehaviour
     private float wallJumpingTime = 0.2f;
     private float wallJumpingCounter;
     private float wallJumpingDuration = 0.4f;
-    private Vector2 wallJumpingPower = new Vector2(4f, 8f);
+    private Vector2 wallJumpingPower = new Vector2(2f, 4f);
     [SerializeField] private Transform isWall;
     [SerializeField] private LayerMask wallLayer;
     private bool isWallRight;
