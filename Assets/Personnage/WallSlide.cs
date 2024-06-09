@@ -5,7 +5,7 @@ public class WallSlide : MonoBehaviour
     private Rigidbody2D rb;
     public float slideSpeed = 5f;
     private bool isSliding = false;
-    private int slideDirection = 0; // 1 for down, -1 for up
+    private int slideDirection = 0;
     public float slideGravityScale = 1f;
     private Quaternion initialRotation;
     private float initialGravityScale;

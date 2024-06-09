@@ -12,9 +12,6 @@ public class SpawnPoint : MonoBehaviour
         {
             monPersoSpawn.transform.position = transform.position;
         }
-        else
-        {
-            Debug.LogError("Pomme de terre a poeler lustucru ( changement de scene - SpawnPoint)");
-        }
+
     }
 }

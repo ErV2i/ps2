@@ -8,7 +8,7 @@ public class PlatformFall : MonoBehaviour
     public float fallDuration = 0.5f;
     public float returnDuration = 0.5f; 
 
-    private Vector3 initialPosition; // stocker la position initial de l'objet
+    private Vector3 initialPosition;
     private bool isFalling = false;
 
     private void Start()
@@ -31,9 +31,9 @@ public class PlatformFall : MonoBehaviour
     {
         isFalling = true;
         Vector3 fallPosition = initialPosition + Vector3.down * fallDistance;
-        float elapsedTime = 0f; // temps écouler
+        float elapsedTime = 0f; 
 
-        while (elapsedTime < fallDuration) // temps que le temps écouler est inferieur a fallDuration l'object descent
+        while (elapsedTime < fallDuration)
         {
             targetObject.transform.localPosition = Vector3.Lerp(initialPosition, fallPosition, elapsedTime / fallDuration);
             elapsedTime += Time.deltaTime;

@@ -5,7 +5,6 @@ public class Restart : MonoBehaviour
 {
     void Update()
     {
-        // Vérifie si la touche R est enfoncée
         if (Input.GetKeyDown(KeyCode.R))
         {
             RestartGame();

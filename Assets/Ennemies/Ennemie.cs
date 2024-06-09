@@ -9,6 +9,7 @@ public class Ennemie : MonoBehaviour
     private float timer;
     private GameObject player;
     public float disLimite;
+    public float shootInterval = 0.1f;
 
     void Start()
     {
@@ -22,7 +23,7 @@ public class Ennemie : MonoBehaviour
         if (distance < disLimite)
         {
             timer += Time.deltaTime;
-            if (timer > 2)
+            if (timer > shootInterval)
             {
                 timer = 0;
                 Shoot(); 

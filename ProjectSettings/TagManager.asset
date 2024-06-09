@@ -9,9 +9,8 @@ TagManager:
   - WallRight
   - Slide
   - SlideRight
-  - Salle 1
-  - Salle 2
-  - Salle 3
+  - Obstacle
+  - tp1
   layers:
   - Default
   - TransparentFX
